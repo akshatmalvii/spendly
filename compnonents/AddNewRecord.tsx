@@ -245,7 +245,7 @@ const AddRecord = () => {
                 name='amount'
                 id='amount'
                 min='0'
-                max='1000'
+                max='100000'
                 step='0.01'
                 value={amount}
                 onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
