@@ -59,8 +59,7 @@ const ContactPage = () => {
               </span>
             </h2>
             <p className='text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2 sm:px-0'>
-              Choose the most convenient way to reach out to our Spendly - ExpenseTracker
-              AI support team.
+              Choose the most convenient way to reach out to our Spendly support team.
             </p>
           </div>
 
