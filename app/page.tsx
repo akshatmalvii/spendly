@@ -3,7 +3,7 @@ import AddNewRecord from '@/compnonents/AddNewRecord';
 import AIInsights from '@/compnonents/AIInsights';
 import ExpenseStats from '@/compnonents/ExpenseStats';
 import Guest from '@/compnonents/Guest';
-import RecordChart from '@/compnonents/RecordChart';
+// import RecordChart from '@/compnonents/RecordChart';
 import RecordHistory from '@/compnonents/RecordHistory';
 import { currentUser } from '@clerk/nextjs/server';
 
@@ -89,7 +89,7 @@ export default async function HomePage() {
           {/* Right Column - Stacked below on mobile */}
           <div className='space-y-4 sm:space-y-6'>
             {/* Expense Analytics */}
-            <RecordChart />
+            {/* <RecordChart /> */}
             <ExpenseStats />
           </div>
         </div>
