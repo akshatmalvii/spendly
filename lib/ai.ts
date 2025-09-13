@@ -46,7 +46,8 @@ export async function generateExpenseInsights(
       date: expense.date,
     }));
 
-    const prompt = `Analyze the following expense data and provide 3-4 actionable financial insights. 
+    const prompt = `Analyze the following expense data and provide 3-4 actionable financial insights.
+    **Important: All monetary values in your response MUST be prefixed with the Indian Rupee symbol (₹). Do not use any other currency symbol.** 
     Return a JSON array of insights with this structure:
     {
       "type": "warning|info|success|tip",
@@ -189,6 +190,7 @@ export async function generateAIAnswer(
     }));
 
     const prompt = `Based on the following expense data, provide a detailed and actionable answer to this question: "${question}"
+    **Important: All monetary values in your response MUST be prefixed with the Indian Rupee symbol (₹). Do not use any other currency symbol.**
 
     Expense Data:
     ${JSON.stringify(expensesSummary, null, 2)}
