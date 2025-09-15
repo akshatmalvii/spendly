@@ -62,6 +62,9 @@ Follow these instructions to get a copy of the project up and running on your lo
     # Clerk Authentication Keys (get from your Clerk dashboard)
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
     CLERK_SECRET_KEY=sk_test_...
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+    NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+    NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
 
     # OpenRouter API Key
     OPENROUTER_API_KEY=sk-or-v1-...
