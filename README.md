@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spendly - AI-Powered Expense Tracker 💰
+
+Spendly is a modern, full-stack web application designed to help users track their expenses, manage budgets, and gain financial clarity through AI-powered insights. It leverages a powerful tech stack to provide a seamless, secure, and intelligent user experience.
+
+---
+
+## Key Features ✨
+
+* **AI-Powered Insights**: Get personalized financial advice and analysis of your spending patterns. The app uses an AI model to generate actionable tips and warnings.
+* **Smart Categorization**: Automatically suggests categories for new expenses based on their description, powered by AI.
+* **Interactive AI Q&A**: Ask questions about your spending habits and receive detailed, context-aware answers from the AI.
+* **Interactive Dashboard**: Visualize your financial data with an interactive bar chart and key statistics like your highest, lowest, and average spending.
+* **Secure Authentication**: User authentication is handled securely by Clerk, including sign-up, sign-in, and protected routes.
+* **Full CRUD Functionality**: Users can easily add, view, and delete their expense records.
+* **Responsive Design with Dark Mode**: The application is fully responsive and includes a beautiful, persistent dark mode for user comfort.
+
+---
+
+## Tech Stack 🛠️
+
+| Category | Technology |
+| :--- | :--- |
+| **Frontend** | Next.js (App Router), React, TypeScript, Tailwind CSS, Chart.js |
+| **Backend** | Next.js (Server Actions), Prisma ORM |
+| **Database** | PostgreSQL |
+| **AI** | OpenRouter (via `openai` SDK) with Deepseek Model |
+| **Auth** | Clerk |
+| **Linting** | ESLint |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Node.js (v18 or later)
+* npm, yarn, or pnpm
+* A PostgreSQL database
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation & Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/spendly.git](https://github.com/your-username/spendly.git)
+    cd spendly
+    ```
 
-## Learn More
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3.  **Set up environment variables:**
+    Create a file named `.env.local` in the root of your project and add the following variables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```env
+    # PostgreSQL Database URL from your hosting provider
+    DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    # Clerk Authentication Keys (get from your Clerk dashboard)
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+    CLERK_SECRET_KEY=sk_test_...
 
-## Deploy on Vercel
+    # OpenRouter API Key
+    OPENROUTER_API_KEY=sk-or-v1-...
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    # Your app's base URL
+    NEXT_PUBLIC_APP_URL="http://localhost:3000"
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Push the database schema:**
+    Run the Prisma command to sync your schema with your PostgreSQL database.
+    ```bash
+    npx prisma migrate dev
+    ```
+
+5.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
