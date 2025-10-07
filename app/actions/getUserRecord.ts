@@ -14,20 +14,29 @@ async function getUserRecord(): Promise<{
   }
 
   try {
+    // Create a date object for 30 days ago
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
     const records = await db.record.findMany({
-      where: { userId },
+      where: {
+        userId,
+        // Add this date filter to the query
+        date: {
+          gte: thirtyDaysAgo, // gte means "greater than or equal to"
+        },
+      },
     });
 
     const record = records.reduce((sum, record) => sum + record.amount, 0);
 
-    // Count the number of days with valid sleep records
     const daysWithRecords = records.filter(
       (record) => record.amount > 0
     ).length;
 
     return { record, daysWithRecords };
   } catch (error) {
-    console.error('Error fetching user record:', error); // Log the error
+    console.error('Error fetching user record:', error);
     return { error: 'Database error' };
   }
 }
